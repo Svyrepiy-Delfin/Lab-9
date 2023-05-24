@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main page</title>
-</head>
-<body>
-<h2>Messages</h2>
-<form method="post" action="/add_message">
-    <input type="text" name="text">
-    <input type="text" name="tag">
-    <button type="submit">Add post</button>
-</form>
+{% extends 'base.html' %}
 
-<h3>Messages feed</h3>
-{% for message in messages %}
-<div>{{ message.text }}
-    {% for tag in message.tags %}
-        <b>#{{ tag.text }}</b>
-    {% endfor %}
-</div>
-{% endfor %}
+{% block title %}
+Главная страница
+{% endblock %}
 
-</body>
-</html>
+{% block body %}
+    <div class="container" style="margin-top: 100px">
+        <h1>Lab 9</h1>
+    </div>
+{% endblock %}
